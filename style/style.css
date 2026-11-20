@@ -694,3 +694,501 @@ footer p {
         height: 280px;
     }
 }
+
+/* ==================================
+   CENTER DARK / LIGHT MODE SWITCH
+================================== */
+
+.theme-control {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    padding: 10px 20px;
+    border-radius: 50px;
+
+    background: rgba(20, 20, 35, 0.95);
+    border: 1px solid #00eaff;
+    box-shadow: 0 0 12px rgba(0, 234, 255, 0.3);
+}
+
+/* MODE LABELS */
+.mode-label {
+    font-size: 13px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.dark-label {
+    color: #00eaff;
+}
+
+.light-label {
+    color: #aaaaaa;
+}
+
+/* HIDE CHECKBOX */
+#theme-switch {
+    display: none;
+}
+
+/* SWITCH BACKGROUND */
+.switch {
+    position: relative;
+    width: 55px;
+    height: 28px;
+    display: block;
+    border-radius: 30px;
+    background: #33334a;
+    border: 2px solid #00eaff;
+    cursor: pointer;
+    transition: 0.4s;
+    flex-shrink: 0;
+}
+
+/* SWITCH CIRCLE */
+.switch-circle {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #00eaff;
+    transition: 0.4s;
+    box-shadow: 0 0 8px #00eaff;
+}
+
+/* LIGHT MODE SWITCH */
+#theme-switch:checked + .switch {
+    background: #eeeeee;
+    border-color: #7b2cff;
+}
+
+#theme-switch:checked + .switch .switch-circle {
+    transform: translateX(27px);
+    background: #7b2cff;
+    box-shadow: 0 0 8px #7b2cff;
+}
+
+/* ==================================
+   LIGHT MODE WEBSITE
+================================== */
+
+body:has(#theme-switch:checked) {
+    background: #f4f6fb;
+    color: #222222;
+}
+
+body:has(#theme-switch:checked) .hero,
+body:has(#theme-switch:checked) .section {
+    background: #f4f6fb;
+    color: #222222;
+}
+
+/* HEADINGS */
+body:has(#theme-switch:checked) h1,
+body:has(#theme-switch:checked) h2,
+body:has(#theme-switch:checked) h3,
+body:has(#theme-switch:checked) h4 {
+    color: #222222;
+}
+
+/* PARAGRAPHS */
+body:has(#theme-switch:checked) p {
+    color: #444455;
+}
+
+/* HIGHLIGHTED TEXT */
+body:has(#theme-switch:checked) h1 span,
+body:has(#theme-switch:checked) h2 span {
+    color: #7b2cff;
+}
+
+/* CARDS */
+body:has(#theme-switch:checked) .skill-card,
+body:has(#theme-switch:checked) .project-card,
+body:has(#theme-switch:checked) .contact-card,
+body:has(#theme-switch:checked) .profile-details {
+    background: #ffffff;
+    color: #222222;
+    border: 1px solid #e0e0ec;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+/* CARD TEXT */
+body:has(#theme-switch:checked) .skill-card p,
+body:has(#theme-switch:checked) .project-card p,
+body:has(#theme-switch:checked) .contact-card p,
+body:has(#theme-switch:checked) .profile-details p {
+    color: #444455;
+}
+
+/* BUTTONS */
+body:has(#theme-switch:checked) .btn {
+    background: linear-gradient(90deg, #0066ff, #8a2be2);
+    color: #ffffff !important;
+}
+
+/* OUTLINE BUTTON */
+body:has(#theme-switch:checked) .btn-outline {
+    background: transparent;
+    color: #0066cc !important;
+    border: 2px solid #0066cc;
+}
+
+/* SOCIAL LINKS */
+body:has(#theme-switch:checked) .social-links a,
+body:has(#theme-switch:checked) .footer-socials a,
+body:has(#theme-switch:checked) .contact-card a {
+    color: #0066cc;
+}
+
+/* PROJECT LABELS */
+body:has(#theme-switch:checked) .project-info span {
+    background: #7134d8;
+    color: #ffffff;
+}
+
+/* FOOTER */
+body:has(#theme-switch:checked) footer {
+    background: #e4e8f1;
+    color: #222222;
+}
+
+body:has(#theme-switch:checked) footer p {
+    color: #444455;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 480px) {
+    .theme-control {
+        top: 12px;
+        gap: 8px;
+        padding: 8px 12px;
+    }
+
+    .mode-label {
+        font-size: 11px;
+    }
+
+    .switch {
+        width: 48px;
+        height: 26px;
+    }
+
+    #theme-switch:checked + .switch .switch-circle {
+        transform: translateX(20px);
+    }
+}
+
+/* ==========================================
+   COMPLETE LIGHT MODE VISIBILITY FIX
+   HTML + CSS ONLY
+========================================== */
+
+/* MAIN BACKGROUND */
+body:has(#theme-switch:checked) {
+    background: #f4f6fc !important;
+    color: #222222 !important;
+}
+
+/* ALL MAIN SECTIONS */
+body:has(#theme-switch:checked) .hero,
+body:has(#theme-switch:checked) .section,
+body:has(#theme-switch:checked) .skills-section,
+body:has(#theme-switch:checked) .profile-section,
+body:has(#theme-switch:checked) .contact-section {
+    background: #f4f6fc !important;
+    color: #222222 !important;
+}
+
+/* ALL HEADINGS */
+body:has(#theme-switch:checked) h1,
+body:has(#theme-switch:checked) h2,
+body:has(#theme-switch:checked) h3,
+body:has(#theme-switch:checked) h4 {
+    color: #191927 !important;
+}
+
+/* ALL PARAGRAPHS */
+body:has(#theme-switch:checked) p {
+    color: #454555 !important;
+}
+
+/* HIGHLIGHTED TEXT */
+body:has(#theme-switch:checked) h1 span,
+body:has(#theme-switch:checked) h2 span {
+    color: #762bdb !important;
+}
+
+/* SECTION HEADINGS */
+body:has(#theme-switch:checked) .section-heading p {
+    color: #666677 !important;
+}
+
+body:has(#theme-switch:checked) .section-heading h2 {
+    color: #191927 !important;
+}
+
+/* ==========================================
+   PROJECT SECTION
+========================================== */
+
+body:has(#theme-switch:checked) .projects-container {
+    background: transparent !important;
+}
+
+body:has(#theme-switch:checked) .project-card {
+    background: #ffffff !important;
+    color: #222222 !important;
+    border: 1px solid #dddded !important;
+    border-radius: 15px !important;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.10) !important;
+}
+
+body:has(#theme-switch:checked) .project-info {
+    background: #ffffff !important;
+    color: #222222 !important;
+}
+
+body:has(#theme-switch:checked) .project-info h3 {
+    color: #191927 !important;
+}
+
+body:has(#theme-switch:checked) .project-info p {
+    color: #454555 !important;
+}
+
+/* PROJECT TECHNOLOGY LABELS */
+body:has(#theme-switch:checked) .project-info span {
+    background: #7134d8 !important;
+    color: #ffffff !important;
+    padding: 9px 16px !important;
+    border-radius: 30px !important;
+    display: inline-block !important;
+    font-weight: bold !important;
+}
+
+/* ==========================================
+   SKILLS SECTION
+========================================== */
+
+body:has(#theme-switch:checked) .skill-card {
+    background: #ffffff !important;
+    color: #222222 !important;
+    border: 1px solid #dddded !important;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08) !important;
+}
+
+body:has(#theme-switch:checked) .skill-card h3 {
+    color: #191927 !important;
+}
+
+body:has(#theme-switch:checked) .skill-card p {
+    color: #454555 !important;
+}
+
+/* ==========================================
+   PROFILE SECTION
+========================================== */
+
+body:has(#theme-switch:checked) .profile-container,
+body:has(#theme-switch:checked) .profile-details {
+    background: #ffffff !important;
+    color: #222222 !important;
+}
+
+body:has(#theme-switch:checked) .profile-details h3,
+body:has(#theme-switch:checked) .profile-details p,
+body:has(#theme-switch:checked) .profile-info strong {
+    color: #222222 !important;
+}
+
+/* ==========================================
+   CONTACT SECTION
+========================================== */
+
+body:has(#theme-switch:checked) .contact-card {
+    background: #ffffff !important;
+    color: #222222 !important;
+    border: 1px solid #dddded !important;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08) !important;
+}
+
+body:has(#theme-switch:checked) .contact-card h3 {
+    color: #191927 !important;
+}
+
+body:has(#theme-switch:checked) .contact-card p {
+    color: #454555 !important;
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+body:has(#theme-switch:checked) .btn {
+    background: linear-gradient(90deg, #0066ff, #762bdb) !important;
+    color: #ffffff !important;
+    border: 2px solid transparent !important;
+}
+
+body:has(#theme-switch:checked) .btn-outline {
+    background: transparent !important;
+    color: #0066cc !important;
+    border: 2px solid #0066cc !important;
+}
+
+body:has(#theme-switch:checked) .btn:hover {
+    box-shadow: 0 0 15px rgba(118,43,219,0.4) !important;
+}
+
+/* ==========================================
+   SOCIAL MEDIA LINKS
+========================================== */
+
+body:has(#theme-switch:checked) .social-links a,
+body:has(#theme-switch:checked) .footer-socials a,
+body:has(#theme-switch:checked) .contact-card a {
+    color: #0066cc !important;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+body:has(#theme-switch:checked) footer {
+    background: #e5e9f2 !important;
+    color: #222222 !important;
+}
+
+body:has(#theme-switch:checked) footer p {
+    color: #454555 !important;
+}
+
+body:has(#theme-switch:checked) .footer-logo {
+    color: #191927 !important;
+}
+
+/* ==========================================
+   THEME SWITCH
+========================================== */
+
+body:has(#theme-switch:checked) .theme-control {
+    background: #ffffff !important;
+    border: 1px solid #762bdb !important;
+}
+
+body:has(#theme-switch:checked) .light-label {
+    color: #762bdb !important;
+}
+
+body:has(#theme-switch:checked) .dark-label {
+    color: #777777 !important;
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+@media (max-width: 768px) {
+    body:has(#theme-switch:checked) .project-card,
+    body:has(#theme-switch:checked) .skill-card,
+    body:has(#theme-switch:checked) .contact-card {
+        background: #ffffff !important;
+        color: #222222 !important;
+    }
+}
+
+/* =================================
+   LIGHT MODE - BLACK BUTTONS & TEXT
+================================= */
+
+/* All Main Text */
+body:has(#theme-switch:checked) h1,
+body:has(#theme-switch:checked) h2,
+body:has(#theme-switch:checked) h3,
+body:has(#theme-switch:checked) h4,
+body:has(#theme-switch:checked) p {
+    color: #000000 !important;
+}
+
+/* Project Titles and Descriptions */
+body:has(#theme-switch:checked) .project-info h3,
+body:has(#theme-switch:checked) .project-info p {
+    color: #000000 !important;
+}
+
+/* Skill Text */
+body:has(#theme-switch:checked) .skill-card h3,
+body:has(#theme-switch:checked) .skill-card p {
+    color: #000000 !important;
+}
+
+/* Contact Text */
+body:has(#theme-switch:checked) .contact-card h3,
+body:has(#theme-switch:checked) .contact-card p {
+    color: #000000 !important;
+}
+
+/* Profile Text */
+body:has(#theme-switch:checked) .profile-details h3,
+body:has(#theme-switch:checked) .profile-details p,
+body:has(#theme-switch:checked) .profile-info strong {
+    color: #000000 !important;
+}
+
+/* MAIN BUTTONS - BLACK */
+body:has(#theme-switch:checked) .btn {
+    background: #000000 !important;
+    color: #ffffff !important;
+    border: 2px solid #000000 !important;
+}
+
+/* OUTLINE BUTTONS */
+body:has(#theme-switch:checked) .btn-outline {
+    background: transparent !important;
+    color: #000000 !important;
+    border: 2px solid #000000 !important;
+}
+
+/* SOCIAL MEDIA LINKS */
+body:has(#theme-switch:checked) .social-links a,
+body:has(#theme-switch:checked) .footer-socials a {
+    color: #000000 !important;
+}
+
+/* PROJECT TECHNOLOGY BUTTONS */
+body:has(#theme-switch:checked) .project-info span {
+    background: #000000 !important;
+    color: #ffffff !important;
+}
+
+/* CONTACT LINKS */
+body:has(#theme-switch:checked) .contact-card a {
+    color: #000000 !important;
+}
+
+/* BUTTON HOVER */
+body:has(#theme-switch:checked) .btn:hover {
+    background: #333333 !important;
+    color: #ffffff !important;
+}
+
+/* CARD BACKGROUNDS */
+body:has(#theme-switch:checked) .project-card,
+body:has(#theme-switch:checked) .skill-card,
+body:has(#theme-switch:checked) .contact-card,
+body:has(#theme-switch:checked) .profile-details {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #cccccc !important;
+}
